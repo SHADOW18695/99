@@ -1,17 +1,17 @@
 import os
 from os import getenv
 
-API_ID = getenv("API_ID", "15964059")
+API_ID = getenv("API_ID", "16478649")
 
-API_HASH = getenv("API_HASH", "786fd04eca38875885d9427894796c5c")
+API_HASH = getenv("API_HASH", "78dgjgsdgbsihgdia444yb85d9427894796c5c")
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "6600283424:AAGoKwY_HnjtzdTydpOCtgnNCjy_7tHfBDA")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "5844832724:AAGoKwY_Hnjtrgewjnalwixijy_7tHfBDA")
 
 PASS_DB = int(os.environ.get("PASS_DB", "721"))
 
-sudo_group = -1002140793226
-sudo_user = 5504336689
-log_channel = -1001908668665
+sudo_group = -10021406843333
+sudo_user = 550468565
+log_channel = -100193547696574
 
 # try:
 #     ADMINS=[]
