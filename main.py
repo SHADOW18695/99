@@ -50,31 +50,8 @@ async def restart_handler(bot: Client,m: Message):
         os.execl(sys.executable, sys.executable, *sys.argv)
     else:
         await m.reply_text("**Ask Strter to stop.**")
-
-
-@bot.on_message(filters.command(["speedtest", "spt"]) & filters.user(sudo_user))
-async def speedtest_function(_, message: Message):
-    m = await message.reply_text("» ʀᴜɴɴɪɴɢ ᴀ sᴘᴇᴇᴅᴛᴇsᴛ...")
-    result = await asyncio.get_event_loop().run_in_executor(None, helper.testspeed, m)
-    output = f"""✯ <b>sᴩᴇᴇᴅᴛᴇsᴛ ʀᴇsᴜʟᴛs</b> ✯
-    
-<u><b>ᴄʟɪᴇɴᴛ :</b></u>
-<b>» ɪsᴩ :</b> {result['client']['isp']}
-<b>» ᴄᴏᴜɴᴛʀʏ :</b> {result['client']['country']}
-  
-<u><b>sᴇʀᴠᴇʀ :</b></u>
-<b>» ɴᴀᴍᴇ :</b> {result['server']['name']}
-<b>» ᴄᴏᴜɴᴛʀʏ :</b> {result['server']['country']}, {result['server']['cc']}
-<b>» sᴩᴏɴsᴏʀ :</b> {result['server']['sponsor']}
-<b>» ʟᴀᴛᴇɴᴄʏ :</b> {result['server']['latency']}  
-<b>» ᴩɪɴɢ :</b> {result['ping']}"""
-    msg = await message.reply_photo(
-        photo=result["share"],
-        caption=output,
-    )
-    await m.delete()        
-
-
+        
+        
 @bot.on_message(filters.command(["txt"]) & filters.user(sudo_group))
 async def account_login(bot: Client, m: Message):
 
