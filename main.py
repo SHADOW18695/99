@@ -146,15 +146,16 @@ async def account_login(bot: Client, m: Message):
     await editable.delete()
     thumb = input6.text
 
-    await editable.edit("**Now Send the chat id or send default**")
+    await editable.edit("**Now send the chat id or** /default")
     input69 = message = await bot.listen(editable.chat.id)
     chat_id = input69.text
     await input69.delete(True)
-    if chat_id == 'default':
-        chat_id =‎ -1002079540958‎
+    if chat_id == '/default':
+        chat_id = -1002079540958
+    elif chat_id == '/default@bulk_uploader_bot':
+        chat_id = -1002079540958
     else:
-        chat_id == chat_id
-    await editable.delete()
+        chat_id = chat_id
 
     if thumb.startswith("http://") or thumb.startswith("https://"):
         getstatusoutput(f"wget '{thumb}' -O 'thumb.jpg'")
