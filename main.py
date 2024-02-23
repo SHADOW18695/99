@@ -36,12 +36,12 @@ bot = Client(
     workers=8
 )
 
-@bot.on_message(filters.command(["radheradhe"]) & filters.user(sudo_group))
+@bot.on_message(filters.command(["start"]) & filters.user(sudo_group))
 async def account_login(bot: Client, m: Message):
-    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /krishna")
+    editable = await m.reply_text(f"Hello [{m.from_user.first_name}](tg://user?id={m.from_user.id})\nPress /txt")
 
 
-@bot.on_message(filters.command("s") & filters.user(sudo_group))
+@bot.on_message(filters.command("stop") & filters.user(sudo_group))
 async def restart_handler(bot: Client,m: Message):
     rcredit = "Bot Restarted by" + f"{m.from_user.first_name}](tg://user?id={m.from_user.id})"
     if (f'{m.from_user.id}' in batch or batch == []) or m.from_user.id == sudo_user:
@@ -75,7 +75,7 @@ async def speedtest_function(_, message: Message):
     await m.delete()        
 
 
-@bot.on_message(filters.command(["krishna"]) & filters.user(sudo_group))
+@bot.on_message(filters.command(["txt"]) & filters.user(sudo_group))
 async def account_login(bot: Client, m: Message):
 
     if batch != []:
@@ -151,7 +151,7 @@ async def account_login(bot: Client, m: Message):
     except Exception:
             res = "480"
     
-    await editable.edit("**Enter Your Name or send `de` for use Your Username**")
+    await editable.edit("**Enter Your Name or send `de` for use Your Username or send skip**")
     input3: Message = await bot.listen(editable.chat.id)
     raw_text3 = input3.text
     await input3.delete(True)
@@ -169,12 +169,12 @@ async def account_login(bot: Client, m: Message):
     await editable.delete()
     thumb = input6.text
 
-    await editable.edit("**Now Send the chat id or** /default")
+    await editable.edit("**Now Send the chat id or send default**")
     input69 = message = await bot.listen(editable.chat.id)
     chat_id = input69.text
     await input69.delete(True)
     if chat_id == 'default':
-        chat_id = -1005738382345
+        chat_id = -1002079540958
     else:
         chat_id == chat_id
     await editable.delete()
@@ -191,7 +191,7 @@ async def account_login(bot: Client, m: Message):
         count = int(raw_text)
 
     try:
-        await bot.send_message(chat_id=int(chat_id),text=f"**BATCH NAME = {file_name}\n\nTotal link = ({len(links)})")
+        await bot.send_message(chat_id=int(chat_id),text=f"**BATCH NAME = {raw_text3}\n\nTotal link = ({len(links)})")
         for i in range(count - 1, len(links)):
 
             V = links[i][1].replace("file/d/","uc?export=download&id=").replace("www.youtube-nocookie.com/embed", "youtu.be").replace("?modestbranding=1", "").replace("/view?usp=sharing","") # .replace("mpd","m3u8")
