@@ -151,7 +151,7 @@ async def account_login(bot: Client, m: Message):
     chat_id = input69.text
     await input69.delete(True)
     if chat_id == 'default':
-        chat_id =‎= -1001659561756‎
+        chat_id =‎= -1002079540958‎
     else:
         chat_id == chat_id
     await editable.delete()
