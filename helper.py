@@ -10,7 +10,6 @@ from config import log_channel
 import aiohttp
 import tgcrypto
 import aiofiles
-import speedtest
 from pyrogram.types import Message
 from pyrogram import Client, filters
 
